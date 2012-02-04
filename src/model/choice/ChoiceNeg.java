@@ -7,7 +7,8 @@ import model.RGBColor;
 import model.util.ColorCombinations;
 
 class ChoiceNeg extends Choice {
-	public RGBColor calculate(ArrayList<Expression> myOperand, double x, double y) {
-		return ColorCombinations.negate(myOperand.get(0).evaluate(x, y));
+	public RGBColor calculate(ArrayList<Expression> myOperand, double x, double y, double currentTime) {
+		this.checkoperandnumber(myOperand, 1);
+		return ColorCombinations.negate(myOperand.get(0).evaluate(x, y, currentTime));
 	}
 }

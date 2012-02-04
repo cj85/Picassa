@@ -49,6 +49,7 @@ import model.choice.let.ChoiceLet;
 		myMap.put("min", new ChoiceMin());
 		myMap.put("Max", new ChoiceMax());
 		myMap.put("if", new ChoiceIf());
+		myMap.put("t", new ChoiceT());
 	}
 
 	static public Choice chooseoperation(String command) {

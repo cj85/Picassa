@@ -10,7 +10,7 @@ public class ChoiceRandom extends Choice {
 
 	@Override
 	public RGBColor calculate(ArrayList<Expression> myOperand, double x,
-			double y) {
+			double y, double currentTime) {
 		return ColorCombinations.random();
 
 	}

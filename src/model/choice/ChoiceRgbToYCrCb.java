@@ -10,8 +10,9 @@ public class ChoiceRgbToYCrCb extends Choice{
 
 	@Override
 	public RGBColor calculate(ArrayList<Expression> myOperand, double x,
-			double y) {
-		return ColorModel.rgb2ycrcb(myOperand.get(0).evaluate(x, y));
+			double y, double currentTime) {
+		this.checkoperandnumber(myOperand, 1);
+		return ColorModel.rgb2ycrcb(myOperand.get(0).evaluate(x, y, currentTime));
 	}
 
 }

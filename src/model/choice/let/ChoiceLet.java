@@ -67,18 +67,18 @@ public class ChoiceLet extends Choice {
 	}
 
 	public RGBColor calculate(ArrayList<Expression> operandList, double x,
-			double y) {
+			double y, double currentTime) {
 		RGBColor result;
 		String DOUBLEREGEXCOMMAND = "VALUE";
 		ArrayList<Expression> myOperand = operandList;
 		String searchedName = getRealVariableString(operandList.get(0), DOUBLEREGEXCOMMAND);
-		RGBColor settedValue = operandList.get(1).evaluate(x, y);
+		RGBColor settedValue = operandList.get(1).evaluate(x, y, currentTime);
 		NodeFactory myNodeFactory = new NodeFactory(searchedName, DOUBLEREGEXCOMMAND);
 
 		// System.out.println("transform "+variablename);
 		 //variableToValue(searchedName, settedValue, myOperand.get(2));
 		myNodeFactory.variableToValue(settedValue, myOperand.get(2));
-		result = myOperand.get(2).evaluate(x, y);
+		result = myOperand.get(2).evaluate(x, y, currentTime);
 		myNodeFactory.valueToVariable(myOperand.get(2));
 		// System.out.println("inverstransform "+variablename);
 	//	 valueToVariable(searchedName,myOperand.get(2));

@@ -10,10 +10,26 @@ import java.awt.Dimension;
 public class Model {
 	public static final double DOMAIN_MIN = -1;
 	public static final double DOMAIN_MAX = 1;
+    public static final int NUM_FRAMES = 50;
 
+    private double myCurrentTime = -1;
 	/**
 	 * Evaluate an expression for each point in the image.
 	 */
+    public void reset ()
+    {
+        myCurrentTime = -1;
+    }
+
+
+    /**
+     * Advance to the next frame in the animation.
+     */
+    public void nextFrame ()
+    {
+        myCurrentTime += 2.0 / NUM_FRAMES;
+    }
+    
 	public Pixmap evaluate(String input, Dimension size) {
 		Pixmap result = new Pixmap(size);
 		// create expression to evaluate just once
@@ -23,7 +39,7 @@ public class Model {
 			double evalY = imageToDomainScale(imageY, size.height);
 			for (int imageX = 0; imageX < size.width; imageX++) {
 				double evalX = imageToDomainScale(imageX, size.width);
-				result.setColor(imageX, imageY, toEval.evaluate(evalX, evalY)
+				result.setColor(imageX, imageY, toEval.evaluate(evalX, evalY, myCurrentTime)
 						.toJavaColor());
 			}
 		}

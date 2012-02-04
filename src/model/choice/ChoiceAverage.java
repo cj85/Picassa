@@ -9,9 +9,9 @@ public class ChoiceAverage extends Choice{
 
 	@Override
 	public RGBColor calculate(ArrayList<Expression> myOperand, double x,
-			double y) {
+			double y, double currentTime) {
 		this.checkoperandnumber(myOperand, 0);
-		return new InfiniteAverage().calculate(myOperand, x, y);
+		return new InfiniteAverage().calculate(myOperand, x, y, currentTime);
 	}
 
 }

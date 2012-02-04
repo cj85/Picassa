@@ -9,12 +9,11 @@ public class ChoiceValue extends Choice{
 
 	@Override
 	public RGBColor calculate(ArrayList<Expression> myOperand, double x,
-			double y) {
+			double y, double currentTime) {
 		if(myOperand.get(0).getCommand()!="VALUE")
 		   {return myOperand.get(0).getRgbcolor();}
 		else{
-//			System.out.println("here");
-		return myOperand.get(0).evaluate(x, y);
+		return myOperand.get(0).evaluate(x, y, currentTime);
 		} 
 	}
 

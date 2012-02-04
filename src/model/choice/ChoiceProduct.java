@@ -9,8 +9,9 @@ public class ChoiceProduct extends Choice{
 
 	@Override
 	public RGBColor calculate(ArrayList<Expression> myOperand, double x,
-			double y) {
-	return new InfiniteProduct().calculate(myOperand, x, y);
+			double y, double currentTime) {
+		this.checkoperandnumber(myOperand, 0);
+	return new InfiniteProduct().calculate(myOperand, x, y, currentTime);
 	}
 
 }

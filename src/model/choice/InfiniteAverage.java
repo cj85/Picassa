@@ -8,8 +8,8 @@ import model.util.ColorCombinations;
 
 public class InfiniteAverage extends InfiniteSum{
 	final public RGBColor calculate(ArrayList<Expression> myOperand, double x,
-			double y) {
-		RGBColor sum=super.calculate(myOperand, x, y);
+			double y, double currentTime) {
+		RGBColor sum=super.calculate(myOperand, x, y, currentTime);
 		RGBColor denominator=new RGBColor(myOperand.size());
 		return ColorCombinations.divide(sum, denominator);
 	}

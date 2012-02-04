@@ -9,10 +9,10 @@ public  class Infinite {
 	 
 
 	 public RGBColor calculate(ArrayList<Expression> myOperand, double x,
-			double y) {
-		RGBColor result=myOperand.get(0).evaluate(x, y);
+			double y, double currentTime) {
+		RGBColor result=myOperand.get(0).evaluate(x, y, currentTime);
 		for (int i = 1; i < myOperand.size(); i++)
-			result =operator(result, myOperand.get(i).evaluate(x, y));
+			result =operator(result, myOperand.get(i).evaluate(x, y, currentTime));
 		return result;
 	}
 	

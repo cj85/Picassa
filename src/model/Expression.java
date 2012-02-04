@@ -56,15 +56,13 @@ public class Expression {
 	}
 
 	/**
+	 * @param currentTime TODO
 	 * @return value of expression
 	 */
-	public RGBColor evaluate(double x, double y) {
-
-	//	RGBColor myTmp = ChoiceFactory.chooseoperation(myCommand).calculate(
-		//		myOperand, x, y);
+	public RGBColor evaluate(double x, double y, double currentTime) {
 		if (ChoiceFactory.chooseoperation(myCommand) != null)
 			return ChoiceFactory.chooseoperation(myCommand).calculate(
-					myOperand, x, y);
+					myOperand, x, y, currentTime);
 		else
 			throw new ParserException("Unknown Command " + myCommand,
 					Type.UNKNOWN_COMMAND);
@@ -87,7 +85,6 @@ public class Expression {
 	public void addNode(int index,Expression node){
 	
 		myOperand.add(index,node);
-//	System.out.println(myOperand.size());
 	}
 	public void removeNode(int index){
 		myOperand.remove(index);

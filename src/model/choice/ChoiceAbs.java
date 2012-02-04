@@ -10,9 +10,9 @@ public class ChoiceAbs extends Choice {
 
 	@Override
 	public RGBColor calculate(ArrayList<Expression> myOperand, double x,
-			double y) {
+			double y, double currentTime) {
 		this.checkoperandnumber(myOperand, 1);
-		return ColorCombinations.abs(myOperand.get(0).evaluate(x, y));
+		return ColorCombinations.abs(myOperand.get(0).evaluate(x, y, currentTime));
 	}
 
 }

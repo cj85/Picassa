@@ -137,5 +137,7 @@ public class ColorCombinations
 		return new RGBColor(Math.log(color.getRed()),Math.log(color
 				.getGreen()), Math.log(color.getBlue()));
 	}
-	
+	public static RGBColor t(double time){
+		return new RGBColor(time);
+	}
 }

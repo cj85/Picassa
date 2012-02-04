@@ -9,9 +9,10 @@ public class ChoiceMax extends Choice{
 
 	@Override
 	public RGBColor calculate(ArrayList<Expression> myOperand, double x,
-			double y) {
+			double y, double currentTime) {
 		// TODO Auto-generated method stub
-		return new InfiniteMax().calculate(myOperand, x, y);
+		this.checkoperandnumber(myOperand, 0);
+		return new InfiniteMax().calculate(myOperand, x, y, currentTime);
 	}
 
 }

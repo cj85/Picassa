@@ -9,9 +9,10 @@ public class ChoiceMin extends Choice{
 
 	@Override
 	public RGBColor calculate(ArrayList<Expression> myOperand, double x,
-			double y) {
+			double y, double currentTime) {
 		// TODO Auto-generated method stub
-		return new InfiniteMin().calculate(myOperand, x, y);
+		this.checkoperandnumber(myOperand, 0);
+		return new InfiniteMin().calculate(myOperand, x, y, currentTime);
 	}
 
 }
