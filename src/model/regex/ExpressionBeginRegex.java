@@ -8,7 +8,7 @@ import model.*;
 
 public class ExpressionBeginRegex extends Regex {
 		public ExpressionBeginRegex(ParserInput input) {
-			super("\\(([^ ]+)",1,input);
+			super("\\(([^ ^)]+)",1,input);
 		}
 
 		Expression parse(String commandName) {			
