@@ -4,10 +4,15 @@ import java.util.ArrayList;
 
 import model.Expression;
 import model.RGBColor;
-import model.util.ColorCombinations;
+
 
 class ChoiceY extends Choice {
+	public ChoiceY( ) {
+		super(-1);
+		// TODO Auto-generated constructor stub
+	}
+
 	public RGBColor calculate(ArrayList<Expression> myOperand, double x, double y, double currentTime) {
-		return ColorCombinations.y(y);
+		return new RGBColor(y);
 	}
 }

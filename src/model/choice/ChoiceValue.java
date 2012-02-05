@@ -7,6 +7,11 @@ import model.RGBColor;
 
 public class ChoiceValue extends Choice{
 
+	public ChoiceValue( ) {
+		super(-1);
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public RGBColor calculate(ArrayList<Expression> myOperand, double x,
 			double y, double currentTime) {

@@ -81,12 +81,7 @@ public class ColorCombinations
     public static RGBColor color (RGBColor r,RGBColor g, RGBColor b){
     	return new RGBColor(r.getRed(),g.getGreen(),b.getBlue());
     }
-    public static RGBColor x (double i){
-    	return new RGBColor(i); 
-    }
-    public static RGBColor y (double i){
-    	return new RGBColor(i);  
-    }
+
     public static RGBColor random(){
 		double red=Math.random()*2-1;
 		double green=Math.random()*2-1;
@@ -137,7 +132,6 @@ public class ColorCombinations
 		return new RGBColor(Math.log(color.getRed()),Math.log(color
 				.getGreen()), Math.log(color.getBlue()));
 	}
-	public static RGBColor t(double time){
-		return new RGBColor(time);
-	}
+
+	
 }

@@ -61,7 +61,7 @@ public class Expression {
 	 */
 	public RGBColor evaluate(double x, double y, double currentTime) {
 		if (ChoiceFactory.chooseoperation(myCommand) != null)
-			return ChoiceFactory.chooseoperation(myCommand).calculate(
+			return ChoiceFactory.chooseoperation(myCommand).calculatecolor(
 					myOperand, x, y, currentTime);
 		else
 			throw new ParserException("Unknown Command " + myCommand,

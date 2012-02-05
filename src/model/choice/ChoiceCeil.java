@@ -8,10 +8,14 @@ import model.util.ColorCombinations;
 
 public class ChoiceCeil extends Choice{
 
+	public ChoiceCeil( ) {
+		super(1);
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public RGBColor calculate(ArrayList<Expression> myOperand, double x,
 			double y, double currentTime) {
-this.checkoperandnumber(myOperand, 1);
 		return ColorCombinations.ceil(myOperand.get(0).evaluate(x, y, currentTime));
 	}
 

@@ -8,10 +8,14 @@ import model.util.ColorModel;
 
 public class ChoiceRgbToYCrCb extends Choice{
 
+	public ChoiceRgbToYCrCb( ) {
+		super(1);
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public RGBColor calculate(ArrayList<Expression> myOperand, double x,
 			double y, double currentTime) {
-		this.checkoperandnumber(myOperand, 1);
 		return ColorModel.rgb2ycrcb(myOperand.get(0).evaluate(x, y, currentTime));
 	}
 

@@ -8,10 +8,14 @@ import model.util.PerlinNoise;
 
 public class ChoicePerlinBW extends Choice {
 
+	public ChoicePerlinBW( ) {
+		super(2);
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public RGBColor calculate(ArrayList<Expression> myOperand, double x,
 			double y, double currentTime) {
-		this.checkoperandnumber(myOperand, 2);
 		return PerlinNoise.greyNoise(myOperand.get(0).evaluate(x, y, currentTime), myOperand
 				.get(1).evaluate(x, y, currentTime));
 	}
